@@ -1,0 +1,121 @@
+<head>
+  <meta charset="UTF-8" />
+  <title>✨ Daily Activity Tracker</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<center><h1>💡 Daily Activity Tracker</h1></center>
+
+  <div id="dailySummary" class="section">
+    <h2>🌞 Daily Overview</h2>
+    <div id="summaryContent">Loading...</div>
+  </div>
+
+  <form id="dailyForm">
+    <!-- Sections with relevant emojis -->
+
+    <div class="section">
+      <h2>🌟 Meditation</h2>
+      <div style="display: flex; align-items: center; margin-bottom: 10px;">
+        <label style="display: flex; align-items: center; gap: 10px;">
+          <input type="checkbox" name="meditate_morning" onchange="updateMeditationStatus(this, 'morning_status')" />
+          <span>🌅 Morning</span>
+        </label>
+        <span id="morning_status" style="margin-left: 10px;">❌</span>
+      </div>
+      <label>Minutes:</label>
+      <input type="number" name="meditate_morning_minutes" min="0" required/>
+      <br/><br/>
+      <div style="display: flex; align-items: center; margin-bottom: 10px;">
+        <label style="display: flex; align-items: center; gap: 10px;">
+          <input type="checkbox" name="meditate_evening" onchange="updateMeditationStatus(this, 'evening_status')" />
+          <span>🌙 Evening</span>
+        </label>
+        <span id="evening_status" style="margin-left: 10px;">❌</span>
+      </div>
+      <label>Minutes:</label>
+      <input type="number" name="meditate_evening_minutes" min="0" required/>
+    </div>
+
+    <div class="section">
+      <h2>📖 Reading</h2>
+      <label>Pages Read:</label>
+      <input type="text" name="reading_details" required/>
+    </div>
+
+    <div class="section">
+      <h2>🏋️ Workout</h2>
+      <label>Workout Duration (minutes):</label>
+      <input type="number" name="workout_minutes" min="0" required/>
+      <label>Workout Notes:</label>
+      <textarea name="workout_comments" rows="3" required></textarea>
+    </div>
+
+    <div class="section">
+      <h2>💼 Work</h2>
+      <label>Hours Worked Today:</label>
+      <input type="number" name="work_hours" min="0" max="24" step="0.5" required/>
+      <label>What Work Did You Do?</label>
+      <textarea name="work_done" rows="3" required></textarea>
+    </div>
+
+    <div class="section">
+      <h2>🧠 New Things You Learnt Today</h2>
+      <textarea name="new_things_learned" rows="4" required></textarea>
+    </div>
+
+    <div class="section">
+      <h2>🗓️ Plan for Tomorrow</h2>
+      <label>To-Do List:</label>
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <input type="text" id="newTask" placeholder="Add a task..." />
+        <button type="button" onclick="addTask()">➕</button>
+      </div>
+      <ul id="todoList" style="margin-top: 10px;"></ul>
+
+      <label style="margin-top: 20px;">Links/Ideas to Learn:</label>
+      <textarea name="learn_tomorrow_links" rows="2" required></textarea>
+    </div>
+
+    <div class="section">
+      <h2>✨ Good Things You Did Today</h2>
+      <textarea name="good_things_today" rows="3" required></textarea>
+    </div>
+
+    <div class="section">
+      <h2>⚠️ Bad Things to Improve</h2>
+      <textarea name="bad_things_today" rows="3" required></textarea>
+    </div>
+
+    <div class="section">
+      <h2>🍬 Sugar / Junk Food Intake</h2>
+      <label><input type="checkbox" name="ate_sugar" /> Ate Sugar Today</label><br/>
+      <label><input type="checkbox" name="ate_junk" /> Ate Junk Food Today</label>
+    </div>
+
+    <div class="section">
+      <h2>⚡️ Energy & Mood</h2>
+      <label>Energy Level (1-10):</label>
+      <input type="number" name="energy_level" min="1" max="10" required/><br/>
+      <label>Mood (1-10):</label>
+      <input type="number" name="mood_level" min="1" max="10" required/>
+    </div>
+
+    <div class="section">
+      <h2>🌟 Did You Accomplish Today's Goals?</h2>
+      <div style="display: flex; gap: 20px;">
+        <label><input type="radio" name="goals_accomplished" value="yes" required/> ✨ Yes</label>
+        <label><input type="radio" name="goals_accomplished" value="no" required/> 😔 No</label>
+      </div>
+    </div>
+
+    <center><button type="submit">📅 Save Day's Log</button></center>
+  </form>
+
+  <script src="js/taskManager.js"></script>
+  <script src="js/meditationTracker.js"></script>
+  <script src="js/storageHandler.js"></script>
+  <script src="js/summaryGenerator.js"></script>
+  <script src="js/formHandler.js"></script>
+  <script src="js/main.js"></script>
+</body>

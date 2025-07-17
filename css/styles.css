@@ -1,0 +1,62 @@
+ #newTask {
+      flex-grow: 1;
+    }
+    #todoList li {
+      padding: 5px 0;
+      list-style: none;
+      font-size: 16px;
+    }
+    #todoList input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #fffbe6;
+      color: #333;
+    }
+    h1 {
+      color: #d4af37;
+    }
+    h2 {
+      margin-top: 40px;
+      color: #ff9900;
+    }
+    textarea, input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 15px 0;
+      border: 1px solid #ffd633;
+      border-radius: 4px;
+      background: #fffdf2;
+    }
+    label {
+      font-weight: bold;
+    }
+    .section {
+      background: #fff4cc;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      border-left: 6px solid #ffcc00;
+    }
+    button {
+      padding: 12px 24px;
+      font-weight: bold;
+      font-size: 16px;
+      background: #ffd633;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ffcc00;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li::marker {
+      color: #ff9900;
+    }
